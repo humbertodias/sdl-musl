@@ -12,6 +12,9 @@
 /**
 CXX=g++
 $CXX main-win.cpp -o main-win --static `pkg-config --static --cflags --libs SDL2 SDL2_image`
+
+# Mac
+$CXX main-win.cpp -o main-win -I_deps/sdl2-src/include -L_deps/sdl2-build -lSDL2 -I_deps/sdl2_image-src/include -L_deps/sdl2_image-build -lSDL2_image -lm -liconv -Wl,-framework,CoreAudio -Wl,-framework,AudioToolbox -Wl,-weak_framework,CoreHaptics -Wl,-weak_framework,GameController -Wl,-framework,ForceFeedback -lobjc -Wl,-framework,CoreVideo -Wl,-framework,Cocoa -Wl,-framework,Carbon -Wl,-framework,IOKit -Wl,-weak_framework,QuartzCore -Wl,-weak_framework,Metal
 */
 int main(int argc, char *args[])
 {

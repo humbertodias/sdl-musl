@@ -3,7 +3,9 @@
 
 /**
 CXX=g++
-$CXX main-win.cpp -o main-win `pkg-config --cflags --libs SDL`
+$CXX main-tty.cpp -o main-tty `pkg-config --cflags --libs SDL`
+
+$CXX main-tty.cpp -o main-tty -I_deps/sdl1-src/include/SDL -L_deps/sdl1-build -lSDLmain -lSDL-1.2.0 -lm -liconv -Wl,-framework,Cocoa
 */
 using namespace std;
 int main(int argc, char *argv[]) {

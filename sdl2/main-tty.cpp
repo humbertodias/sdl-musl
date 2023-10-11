@@ -1,5 +1,5 @@
 #include <iostream>
-#include <SDL2/SDL.h>
+#include <SDL.h>
 
 // Window size
 #define WINDOW_WIDTH 640
@@ -8,6 +8,11 @@
 /**
 CXX=g++
 $CXX main-tty.cpp -o main-tty -static `pkg-config --static --cflags --libs SDL2`
+$CXX main-tty.cpp -o main-tty `pkg-config --cflags --libs SDL2`
+
+# Mac
+$CXX main-tty.cpp -o main-tty -D_THREAD_SAFE -I_deps/sdl2-src/include -L_deps/sdl2-build -lSDL2 -I_deps/sdl2_image-src/include -L_deps/sdl2_image-build -lSDL2_image -lm -liconv -Wl,-framework,CoreAudio -Wl,-framework,AudioToolbox -Wl,-weak_framework,CoreHaptics -Wl,-weak_framework,GameController -Wl,-framework,ForceFeedback -lobjc -Wl,-framework,CoreVideo -Wl,-framework,Cocoa -Wl,-framework,Carbon -Wl,-framework,IOKit -Wl,-weak_framework,QuartzCore -Wl,-weak_framework,Metal
+
 */
 using namespace std;
 int main(int, char **)
